@@ -20,5 +20,8 @@
     "transformIgnorePatterns": [
       "<rootDir>/(node_modules)/"
     ]
+  },
+  "dependencies": {
+    "jasmine": "^5.1.0"
   }
 }

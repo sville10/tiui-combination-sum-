@@ -7,10 +7,30 @@
  * @return {number[][]}
  */
 
-const combinationSumRecursive = (
+const combinationSumRecursive =(candidates, target)=> {
+    const resultado = [];
+    
+    function generar(inicio, sumatoria, convinaciones) {
+      if (sumatoria === target) {
+        resultado.push([...convinaciones]);
+        return;
+      }
+      if (sumatoria > target) {
+        return;
+      }
+  
+      for (let i = inicio; i < candidates.length; i++) {
+        convinaciones.push(candidates[i]);
+        generar(i, sumatoria + candidates[i], convinaciones);
+        convinaciones.pop();
+      }
+    }
+  
+    generar(0, 0, []);
+    return resultado;
+  
     
   }
-  
   /**
    * Backtracking algorithm of finding all possible combination for specific sum.
    *
